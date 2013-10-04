@@ -42,12 +42,19 @@
 
 					<h3 id="display-options">Display Options</h3>
 					<div class="control-group">
-						<p class="help-block">Show the share buttons above the blog post's content.</p>
+						
+						<p class="help-block">Show the share buttons <strong>above</strong> the blog post's content.</p>
 						<label><input name="async_share_options[position_top]" type="checkbox" value="true" <?php if ( isset( $options['position_top'] ) ) { checked( 'true', $options['position_top'] ); } ?> /> Yes </label>
-						<p class="help-block">Display the sharing widgets under the posts on blog and archive pages (not just on the single post)</p>
+						
+						<p class="help-block">Show the share buttons <strong>below</strong> the blog post's content.</p>
+						<label><input name="async_share_options[position_bottom]" type="checkbox" value="true" <?php if ( isset( $options['position_bottom'] ) ) { checked( 'true', $options['position_bottom'] ); } ?> /> Yes </label>
+
+						<p class="help-block">Display the sharing widgets on blog and archive pages (not just on the single post)</p>
 						<label><input name="async_share_options[paged]" type="checkbox" value="true" <?php if ( isset( $options['paged'] ) ) { checked( 'true', $options['paged'] ); } ?> /> Yes </label>
+						
 						<p class="help-block">Disable loading the included CSS styles</p>
 						<label><input name="async_share_options[disable_css]" type="checkbox" value="true" <?php if ( isset( $options['disable_css'] ) ) { checked( 'true', $options['disable_css'] ); } ?> /> Yes </label>
+
 					</div><!--/.control-group -->
 					<div class="control-group">
 						<p class="help-block">Where would you like to display the sharing widgets?</p>
