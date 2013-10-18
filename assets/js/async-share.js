@@ -54,5 +54,24 @@ jQuery(document).ready(function(d, s, id) {
     js.src = '//hnbutton.appspot.com/static/hn.js';
     fjs.parentNode.insertBefore(js, fjs);
     }
+    
+    // Replace like with share on mobile devices 
+    if( jQuery(window).width() < 480 ){
+
+         if (jQuery('li.fb-share').length) {
+
+                var fb_share_button = jQuery('li.fb-share');
+
+                fb_share_button.each(function(i, v){
+                    
+                    var share_url   = jQuery(this).children('div').attr('data-href');
+                    var share_link  =    "<li class='fake-fb-btn'><a onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(share_url) + "', 'facebook-share-dialog', 'width=626,height=436'); return false;\"><span></span>Dela</a></li>";
+
+                    jQuery(this).after(share_link);
+                    jQuery(this).hide();
+
+                });
+         }
+    }
 
   }(document, 'script'));
